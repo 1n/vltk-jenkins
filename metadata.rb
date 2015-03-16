@@ -1,0 +1,12 @@
+name             'vltk-jenkins'
+maintainer       'private, inc.'
+maintainer_email 'vlad.tkatchev@gmail.com'
+license          'Apache 2.0'
+description      'Installs/Configures vltk-jenkins'
+long_description 'Installs/Configures vltk-jenkins'
+version          '0.1.0'
+
+depends 'java', '~> 1.31.0'
+depends 'jenkins', '~> 2.2.2'
+depends 'httpd', '~> 0.2.6'
+depends 'route53', '~> 0.4.0'

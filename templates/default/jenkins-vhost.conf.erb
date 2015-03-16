@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  ServerName <%= @server_name %>
+  ProxyRequests Off
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
+  ProxyPreserveHost On
+  ProxyPass / http://<%= @jenkins_url %>:<%= @jenkins_port %>/ nocanon
+  ProxyPassReverse / http://<%= @jenkins_url %>:<%= @jenkins_port %>/
+  ProxyPassReverse / http://<%= @server_name %>/
+  AllowEncodedSlashes NoDecode
+</VirtualHost>
